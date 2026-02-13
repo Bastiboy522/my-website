@@ -559,19 +559,31 @@ Tilmeld dig og modtag:
 • Særlige åbningsarrangementer.
           </div>
 
-          <form class="form-row">
-            <div class="input-group">
-              <label for="name">Navn</label>
-              <input type="text" id="name" placeholder="Dit navn">
-            </div>
-            <div class="input-group">
-              <label for="email">E‑mail</label>
-              <input type="email" id="email" placeholder="din@email.dk">
-            </div>
-            <button class="cta-btn" type="submit">
-              Join the circle <span>↗</span>
-            </button>
-          </form>
+          <form
+  class="form-row"
+  action="https://formspree.io/f/xdaledqg"
+  method="POST"
+>
+  <div class="input-group">
+    <label for="name">Navn</label>
+    <input type="text" id="name" name="name" placeholder="Dit navn">
+  </div>
+
+  <div class="input-group">
+    <label for="email">E‑mail</label>
+    <input type="email" id="email" name="email" placeholder="din@email.dk" required>
+  </div>
+
+  <!-- Ekstra felt hvis du vil gemme note/besked -->
+  <div class="input-group" style="display:none;">
+    <label for="message">Besked</label>
+    <textarea id="message" name="message"></textarea>
+  </div>
+
+  <button class="cta-btn" type="submit">
+    Join the circle <span>↗</span>
+  </button>
+</form>
           <p class="form-footnote">
             Kun relevante opdateringer. Ingen spam.
           </p>
