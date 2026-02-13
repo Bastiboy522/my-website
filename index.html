@@ -7,25 +7,27 @@
   <style>
     /* RESET */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
-      background-color: #f6efe6; /* lys beige */
-      color: #271f18;
-      line-height: 1.6;
-    }
     img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
 
-    /* WARM NEUTRAL PALETTE */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+      background-color: #F2EDE5; /* Body background */
+      color: #5C4E42;           /* Paragraph text */
+      line-height: 1.6;
+    }
+
+    /* PALETTE (fra dig) */
     :root {
-      --bg-stone: #f6efe6;     /* light beige */
-      --bg-cream: #fbf4ea;     /* soft cream */
-      --bg-deep: #4a3a30;      /* deep warm brown */
-      --bg-soft-brown: #c59b7a;/* muted terracotta‑beige */
-      --bg-soft-taupe: #e1c9b1;/* warm taupe */
-      --text-main: #271f18;
-      --text-soft: #8a7360;
-      --border-soft: #e0d0c0;
+      --body-bg: #F2EDE5;
+      --section-alt: #E8DFD2;
+      --heading: #4A3F36;
+      --text: #5C4E42;
+      --primary: #A88F76;
+      --primary-hover: #927B65;
+      --accent: #B7BFA6;
+      --footer: #BFAE98;
+      --border-soft: #D8CABC;
     }
 
     .page {
@@ -40,38 +42,35 @@
       padding: 0 24px;
     }
 
-    /* TOP BAR */
+    /* TOP BAR MED LOGO */
     .topbar {
       position: sticky;
       top: 0;
       z-index: 10;
       backdrop-filter: blur(14px);
-      background: rgba(246,239,230,0.92);
-      border-bottom: 1px solid rgba(224,208,192,0.9);
+      background: rgba(242,237,229,0.95);
+      border-bottom: 1px solid rgba(216,202,188,0.9);
     }
     .topbar-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 72px;
+      height: 76px;
     }
-    .logo-mark {
+    .logo-wrap {
       display: flex;
       align-items: center;
-      gap: 10px;
-      letter-spacing: 0.24em;
-      font-size: 13px;
-      text-transform: uppercase;
+      gap: 12px;
     }
-    .logo-circle {
-      width: 28px;
-      height: 28px;
-      border-radius: 999px;
-      border: 1px solid #271f18;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .logo-wrap img {
+      height: 40px;           /* justér efter behov */
+      width: auto;
+    }
+    .logo-tagline {
       font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #5C4E42;
     }
     .top-pill {
       font-size: 11px;
@@ -80,14 +79,21 @@
       padding: 6px 14px;
       border-radius: 999px;
       border: 1px solid var(--border-soft);
-      background: rgba(251,244,234,0.9);
+      background: rgba(232,223,210,0.8);
+      color: #4A3F36;
     }
 
     /* HERO */
     .hero {
-      background: linear-gradient(120deg, var(--bg-deep) 0%, #5b473a 44%, var(--bg-stone) 44%, var(--bg-stone) 100%);
-      color: #fdf6ec;
-      padding: 72px 0 96px;
+      background: linear-gradient(
+        120deg,
+        #4A3F36 0%,
+        #4A3F36 55%,
+        #F2EDE5 55%,
+        #F2EDE5 100%
+      );
+      color: #F2EDE5;
+      padding: 80px 0 96px;
     }
     .hero-grid {
       display: grid;
@@ -97,8 +103,8 @@
     }
     @media (max-width: 900px) {
       .hero {
-        background: var(--bg-deep);
-        padding-top: 40px;
+        background: #4A3F36;
+        padding-top: 48px;
       }
       .hero-grid {
         grid-template-columns: 1fr;
@@ -110,7 +116,7 @@
       font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 0.22em;
-      color: rgba(253,246,236,0.78);
+      color: rgba(242,237,229,0.76);
       margin-bottom: 18px;
     }
     .hero-title {
@@ -120,10 +126,11 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
       margin-bottom: 18px;
+      color: #F2EDE5;
     }
     .hero-sub {
       font-size: 16px;
-      color: rgba(253,246,236,0.88);
+      color: rgba(242,237,229,0.86);
       max-width: 460px;
       margin-bottom: 32px;
     }
@@ -135,32 +142,33 @@
       font-size: 13px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: rgba(253,246,236,0.78);
+      color: rgba(242,237,229,0.8);
       margin-bottom: 40px;
     }
     .meta-pill {
       padding: 6px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(253,246,236,0.35);
+      border: 1px solid rgba(242,237,229,0.35);
     }
 
     .form-card {
-      background: #fbf4ea;
-      color: var(--text-main);
+      background: #F2EDE5;
+      color: var(--text);
       border-radius: 20px;
       padding: 32px 28px 30px;
       max-width: 420px;
-      box-shadow: 0 26px 60px rgba(0,0,0,0.23);
+      box-shadow: 0 26px 60px rgba(0,0,0,0.18);
     }
     .form-title {
       font-size: 15px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       margin-bottom: 8px;
+      color: var(--heading);
     }
     .form-sub {
       font-size: 14px;
-      color: var(--text-soft);
+      color: var(--text);
       margin-bottom: 20px;
     }
     .form-row {
@@ -173,7 +181,7 @@
       font-size: 13px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--text-soft);
+      color: var(--text);
       margin-bottom: 6px;
       display: block;
     }
@@ -183,11 +191,12 @@
       border: 1px solid var(--border-soft);
       padding: 11px 16px;
       font-size: 14px;
-      background: #fff8f0;
+      background: #FFFFFF;
       outline: none;
+      color: var(--text);
     }
     .input-group input:focus {
-      border-color: var(--bg-soft-brown);
+      border-color: var(--primary);
     }
     .cta-btn {
       border: none;
@@ -197,24 +206,28 @@
       letter-spacing: 0.16em;
       text-transform: uppercase;
       cursor: pointer;
-      background: var(--bg-soft-brown);
-      color: #fdf6ec;
+      background: var(--primary);
+      color: #F2EDE5;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
     }
+    .cta-btn:hover {
+      background: var(--primary-hover);
+    }
     .cta-btn span { font-size: 16px; }
+
     .form-footnote {
       font-size: 11px;
-      color: var(--text-soft);
+      color: var(--text);
       margin-top: 10px;
     }
 
     .hero-visual {
       border-radius: 24px 24px 0 24px;
       overflow: hidden;
-      background: linear-gradient(160deg, #e1c9b1 0%, #f6efe6 40%, #c59b7a 100%);
+      background: linear-gradient(160deg, #E8DFD2 0%, #F2EDE5 40%, #BFAE98 100%);
       display: grid;
       grid-template-rows: 2.2fr 1.3fr;
     }
@@ -228,8 +241,8 @@
       grid-template-columns: 1.15fr 0.85fr;
     }
     .hero-block-primary {
-      background: #4a3a30;
-      color: #fdf6ec;
+      background: #4A3F36;
+      color: #F2EDE5;
       padding: 22px 24px;
       display: flex;
       flex-direction: column;
@@ -244,16 +257,16 @@
     }
     .hero-block-primary p {
       font-size: 13px;
-      color: rgba(253,246,236,0.9);
+      color: rgba(242,237,229,0.9);
     }
     .hero-block-primary span {
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: rgba(253,246,236,0.78);
+      color: rgba(242,237,229,0.8);
     }
     .hero-block-secondary {
-      background: #e1c9b1;
+      background: #E8DFD2;
       padding: 18px 20px;
       display: flex;
       flex-direction: column;
@@ -261,15 +274,16 @@
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.18em;
+      color: #4A3F36;
     }
 
     /* GENERIC SECTIONS */
     .section {
       padding: 80px 0;
-      background: var(--bg-stone);
+      background: var(--body-bg);
     }
     .section.alt {
-      background: var(--bg-cream);
+      background: var(--section-alt);
     }
     .section-header {
       display: flex;
@@ -282,7 +296,7 @@
       font-size: 12px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--text-soft);
+      color: var(--text);
       margin-bottom: 10px;
     }
     .section-title {
@@ -290,11 +304,12 @@
       font-size: 26px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
+      color: var(--heading);
     }
     .section-lead {
       font-size: 15px;
       max-width: 460px;
-      color: var(--text-soft);
+      color: var(--text);
     }
     @media (max-width: 800px) {
       .section-header {
@@ -319,17 +334,18 @@
       font-size: 12px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--text-soft);
+      color: var(--text);
       margin-bottom: 6px;
     }
     .concept-main {
       font-size: 15px;
       font-weight: 500;
       margin-bottom: 4px;
+      color: var(--heading);
     }
     .concept-sub {
       font-size: 14px;
-      color: var(--text-soft);
+      color: var(--text);
     }
 
     /* SOCIAL PROOF */
@@ -344,7 +360,7 @@
     }
     .social-copy p {
       font-size: 15px;
-      color: var(--text-soft);
+      color: var(--text);
       max-width: 520px;
     }
     .social-tags {
@@ -358,14 +374,18 @@
       border-radius: 999px;
       border: 1px solid var(--border-soft);
       padding: 6px 12px;
-      background: #fff8f0;
+      background: #F2EDE5;
+      color: var(--heading);
+    }
+    .tag-pill.accent {
+      color: var(--accent);
     }
 
     .insta-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 6px;
-      background: #1f1712;
+      background: #4A3F36;
       border-radius: 18px;
       overflow: hidden;
     }
@@ -388,7 +408,7 @@
       position: absolute;
       inset: 0;
       background: linear-gradient(145deg, rgba(0,0,0,0.62), transparent);
-      color: #fdf6ec;
+      color: #F2EDE5;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -423,22 +443,23 @@
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: var(--text-soft);
+      color: var(--text);
       margin-bottom: 3px;
     }
     .menu-item {
       margin-bottom: 10px;
+      color: var(--text);
     }
     .menu-note {
       font-size: 12px;
-      color: var(--text-soft);
+      color: var(--text);
       margin-top: 16px;
     }
 
     .menu-card {
       border-radius: 18px;
-      background: linear-gradient(145deg, #4a3a30, #8f6a4c);
-      color: #fdf6ec;
+      background: linear-gradient(145deg, #4A3F36, #A88F76);
+      color: #F2EDE5;
       padding: 22px 20px 18px;
       display: flex;
       flex-direction: column;
@@ -453,16 +474,22 @@
     }
     .menu-card p {
       font-size: 13px;
-      color: rgba(253,246,236,0.9);
+    }
+
+    /* LINKS (accent) */
+    a.accent-link {
+      color: var(--accent);
+    }
+    a.accent-link:hover {
+      text-decoration: underline;
     }
 
     /* FOOTER */
     footer {
       padding: 30px 24px 36px;
-      border-top: 1px solid var(--border-soft);
-      background: var(--bg-stone);
+      background: var(--footer);
       font-size: 12px;
-      color: var(--text-soft);
+      color: #4A3F36;
     }
     .footer-inner {
       max-width: 1120px;
@@ -487,12 +514,13 @@
 <body>
 <div class="page">
 
-  <!-- TOP BAR -->
+  <!-- TOP BAR MED KÓSTA-LOGO -->
   <header class="topbar">
     <div class="wrapper topbar-inner">
-      <div class="logo-mark">
-        <div class="logo-circle">K</div>
-        <span>KÓSTA / MEDITERRANEAN DINING</span>
+      <div class="logo-wrap">
+        <!-- Erstat src med den rigtige filsti/filnavn til dit logo -->
+        <img src="kosta-logo.png" alt="Kósta – Contemporary Mediterranean">
+        <span class="logo-tagline">CONTEMPORARY MEDITERRANEAN</span>
       </div>
       <div class="top-pill">Opening Soon – [by]</div>
     </div>
@@ -572,7 +600,7 @@
         </div>
         <p class="section-lead">
           Kósta er skabt til designbevidste gæster, der vælger restaurant for stemning, værtskab og detaljegrad. 
-          Varm beige palet, naturlige teksturer og et køkken, der smager af sommer sydpå – året rundt.
+          Varm, beige palet, naturlige teksturer og et køkken, der smager af sommer sydpå – året rundt.
         </p>
       </div>
 
@@ -622,7 +650,7 @@
             På Instagram og TikTok deler vi nedslag fra byggepladsen, moodboards, staff tastings og små glimt af livet backstage, før dørene åbner for offentligheden.
           </p>
           <div class="social-tags">
-            <a href="#" class="tag-pill">@kosta.[by]</a>
+            <a href="#" class="tag-pill accent">@kosta.[by]</a>
             <span class="tag-pill">#kostarestaurant</span>
             <span class="tag-pill">#openingsoon</span>
             <span class="tag-pill">#contemporarymediterranean</span>
@@ -725,3 +753,4 @@
 </div>
 </body>
 </html>
+
