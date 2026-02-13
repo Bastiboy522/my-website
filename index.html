@@ -2,7 +2,7 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8">
-  <title>Kósta – Contemporary Mediterranean i [by]</title>
+  <title>Kósta – Contemporary Mediterranean i København</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     /* RESET */
@@ -21,7 +21,7 @@
     :root {
       --body-bg: #F2EDE5;
       --section-alt: #E8DFD2;
-      --heading: #4A3F36;
+      --heading: #B69A6E;   /* ændret fra #4A3F36 */
       --text: #5C4E42;
       --primary: #A88F76;
       --primary-hover: #927B65;
@@ -80,15 +80,15 @@
       border-radius: 999px;
       border: 1px solid var(--border-soft);
       background: rgba(232,223,210,0.8);
-      color: #4A3F36;
+      color: #B69A6E; /* ændret */
     }
 
     /* HERO */
     .hero {
       background: linear-gradient(
         120deg,
-        #4A3F36 0%,
-        #4A3F36 55%,
+        #B69A6E 0%,   /* ændret */
+        #B69A6E 55%,  /* ændret */
         #F2EDE5 55%,
         #F2EDE5 100%
       );
@@ -103,7 +103,7 @@
     }
     @media (max-width: 900px) {
       .hero {
-        background: #4A3F36;
+        background: #B69A6E; /* ændret */
         padding-top: 48px;
       }
       .hero-grid {
@@ -170,6 +170,7 @@
       font-size: 14px;
       color: var(--text);
       margin-bottom: 20px;
+      white-space: pre-line;
     }
     .form-row {
       display: flex;
@@ -241,7 +242,7 @@
       grid-template-columns: 1.15fr 0.85fr;
     }
     .hero-block-primary {
-      background: #4A3F36;
+      background: #B69A6E; /* ændret */
       color: #F2EDE5;
       padding: 22px 24px;
       display: flex;
@@ -274,7 +275,7 @@
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.18em;
-      color: #4A3F36;
+      color: #B69A6E; /* ændret */
     }
 
     /* GENERIC SECTIONS */
@@ -385,7 +386,7 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 6px;
-      background: #4A3F36;
+      background: #B69A6E; /* ændret */
       border-radius: 18px;
       overflow: hidden;
     }
@@ -458,7 +459,7 @@
 
     .menu-card {
       border-radius: 18px;
-      background: linear-gradient(145deg, #4A3F36, #A88F76);
+      background: linear-gradient(145deg, #B69A6E, #A88F76); /* ændret */
       color: #F2EDE5;
       padding: 22px 20px 18px;
       display: flex;
@@ -489,7 +490,7 @@
       padding: 30px 24px 36px;
       background: var(--footer);
       font-size: 12px;
-      color: #4A3F36;
+      color: #B69A6E; /* ændret */
     }
     .footer-inner {
       max-width: 1120px;
@@ -522,7 +523,7 @@
         <img src="kosta-logo.png" alt="Kósta – Contemporary Mediterranean">
         <span class="logo-tagline">CONTEMPORARY MEDITERRANEAN</span>
       </div>
-      <div class="top-pill">Opening Soon – [by]</div>
+      <div class="top-pill">Opening Summer 2026 · Copenhagen K</div>
     </div>
   </header>
 
@@ -531,24 +532,30 @@
     <div class="wrapper hero-grid">
 
       <div>
-        <div class="eyebrow">Contemporary Mediterranean · [by]</div>
+        <div class="eyebrow">Contemporary Mediterranean · Copenhagen</div>
         <h1 class="hero-title">
-          Scandinavian Calm. Mediterranean Evenings.
+          Be First at the Table.
         </h1>
         <p class="hero-sub">
-          Kósta er en moderne middelhavsrestaurant, hvor nordisk ro møder varme aftener, tekstur og langbordsmiddage i stearinlys.
+          Kósta åbner i København K sommeren 2026. Et moderne middelhavskøkken med åben ild, levende vine og lange aftener i dæmpet lys.
+          Pladserne til pre-opening og de første uger bliver begrænsede. Skriv dig op nu og få adgang før alle andre.
         </p>
 
         <div class="hero-meta">
-          <div class="meta-pill">Åbner Sommer 2026</div>
-          <div class="meta-pill">Middelhavet · Naturvin · Kulgrill</div>
-          <div class="meta-pill">Par · Venner · Private Dining</div>
+          <div class="meta-pill">Opening Summer 2026</div>
+          <div class="meta-pill">Fire · Citrus · Naturvin</div>
+          <div class="meta-pill">Dates · Dinners · Private Dining</div>
         </div>
 
         <div class="form-card">
-          <div class="form-title">Bliv inviteret til pre‑opening</div>
+          <div class="form-title">Bliv en del af åbningslisten</div>
           <div class="form-sub">
-            Skriv dig på listen og få første adgang til åbningsaftener, bordbookinger og særlige friends‑&‑family‑middage.
+Få første adgang – før offentligheden.
+Tilmeld dig og modtag:
+• Invitation til pre-opening middage
+• Prioriteret adgang til bordreservationer
+• Early access til private dining
+• Særlige åbningsarrangementer.
           </div>
 
           <form class="form-row">
@@ -561,11 +568,11 @@
               <input type="email" id="email" placeholder="din@email.dk">
             </div>
             <button class="cta-btn" type="submit">
-              Join the list <span>↗</span>
+              Join the circle <span>↗</span>
             </button>
           </form>
           <p class="form-footnote">
-            Ingen nyhedsbrevsspam – kun få, kuraterede mails om åbning og events.
+            Kun relevante opdateringer. Ingen spam.
           </p>
         </div>
       </div>
@@ -575,14 +582,14 @@
         <div class="hero-blocks">
           <div class="hero-block-primary">
             <div>
-              <h3>Kósta · [by]</h3>
-              <p>Beige kalkede vægge, varme træsorter, linen og dæmpet musik. Designet til lange middage, intime samtaler og et glas for meget.</p>
+              <h3>Kósta · Copenhagen</h3>
+              <p>København K. Kalkede vægge. Varme trætoner. Åben ild. Et sted skabt til aftener, der trækker ud – og gæster, der bliver siddende.</p>
             </div>
-            <span>Stenstræde 12 · [by] K</span>
+            <span>Mandag–Torsdag · 18.00–24.00 · Fredag–Lørdag · 18.00–02.00</span>
           </div>
           <div class="hero-block-secondary">
-            <div>Onsdag–Lørdag · 17.30–late</div>
-            <div>Signatur: Grillet havaborre, citrus & urter · Aperitivo bar</div>
+            <div>Opening Summer 2026 · Copenhagen K</div>
+            <div>Contemporary Mediterranean · Fire · Citrus · Naturvin</div>
           </div>
         </div>
       </div>
@@ -590,108 +597,50 @@
     </div>
   </section>
 
-  <!-- CONCEPT -->
+  <!-- OM RESTAURANTEN -->
   <section class="section">
     <div class="wrapper">
       <div class="section-header">
         <div>
-          <div class="section-eyebrow">Stedet</div>
-          <h2 class="section-title">Hvor nord møder Middelhavet</h2>
+          <div class="section-eyebrow">Om restauranten</div>
+          <h2 class="section-title">Kósta · Copenhagen</h2>
         </div>
         <p class="section-lead">
-          Kósta er skabt til designbevidste gæster, der vælger restaurant for stemning, værtskab og detaljegrad. 
-          Varm, beige palet, naturlige teksturer og et køkken, der smager af sommer sydpå – året rundt.
+          København K. Kalkede vægge. Varme trætoner. Åben ild. Et sted skabt til aftener, der trækker ud – og gæster, der bliver siddende.
         </p>
       </div>
 
       <div class="concept-grid">
         <div class="concept-block">
-          <div class="concept-label">Positionering</div>
-          <div class="concept-main">Contemporary Mediterranean</div>
-          <div class="concept-sub">
-            Delretter, kulgrill og vin med kant – serveret med skandinavisk ro og præcision.
-          </div>
+          <div class="concept-label">Åbningstider</div>
+          <div class="concept-main">Mandag–Torsdag</div>
+          <div class="concept-sub">18.00–24.00</div>
         </div>
         <div class="concept-block">
-          <div class="concept-label">Design</div>
-          <div class="concept-main">Scandi minimalism · Warm neutrals</div>
-          <div class="concept-sub">
-            Lag af beige, taupe og sand, håndlavet keramik og tekstur i stedet for stærke farver.
-          </div>
+          <div class="concept-label">Åbningstider</div>
+          <div class="concept-main">Fredag–Lørdag</div>
+          <div class="concept-sub">18.00–02.00</div>
         </div>
         <div class="concept-block">
-          <div class="concept-label">Gæster</div>
-          <div class="concept-main">Par, venner & corporate</div>
-          <div class="concept-sub">
-            Et sted til alt fra første date og venneaftener til intime firmaaftener og små fejringer.
-          </div>
+          <div class="concept-label">Adresse</div>
+          <div class="concept-main">København K</div>
+          <div class="concept-sub">Central beliggenhed, få minutter fra byen og vandet.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SOCIAL PROOF -->
+  <!-- HVORFOR KÓSTA -->
   <section class="section alt">
     <div class="wrapper">
       <div class="section-header">
         <div>
-          <div class="section-eyebrow">Følg med</div>
-          <h2 class="section-title">Følg transformationen</h2>
+          <div class="section-eyebrow">Hvorfor Kósta</div>
+          <h2 class="section-title">Middelhavet møder København</h2>
         </div>
         <p class="section-lead">
-          Vi dokumenterer rejsen fra rå lokaler til færdig restaurant – materialevalg, menu‑tests, vin‑smagninger og åbningsdage. 
-          Følg med, gem favoritter og del med dem, du vil spise med.
-        </p>
-      </div>
-
-      <div class="social-grid">
-        <div class="social-copy">
-          <p>
-            På Instagram og TikTok deler vi nedslag fra byggepladsen, moodboards, staff tastings og små glimt af livet backstage, før dørene åbner for offentligheden.
-          </p>
-          <div class="social-tags">
-            <a href="#" class="tag-pill accent">@kosta.[by]</a>
-            <span class="tag-pill">#kostarestaurant</span>
-            <span class="tag-pill">#openingsoon</span>
-            <span class="tag-pill">#contemporarymediterranean</span>
-          </div>
-        </div>
-        <div class="insta-grid">
-          <div class="insta-item">
-            <div class="insta-overlay">
-              <span>Byggeri · Uge 06</span>
-              <span>Swipe for flere</span>
-            </div>
-          </div>
-          <div class="insta-item">
-            <div class="insta-overlay">
-              <span>Menu testing</span>
-              <span>Stories live</span>
-            </div>
-          </div>
-          <div class="insta-item">
-            <div class="insta-overlay">
-              <span>Vin & stemning</span>
-              <span>Afslut dagen her</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- MENU MOOD -->
-  <section class="section">
-    <div class="wrapper">
-      <div class="section-header">
-        <div>
-          <div class="section-eyebrow">Køkkenet</div>
-          <h2 class="section-title">Et køkken bygget til at dele</h2>
-        </div>
-        <p class="section-lead">
-          Vi arbejder med åbent ildsted, citrus, urter og gode grøntsager. 
-          Menukortet ændrer sig efter sæson, men følelsen er den samme: lys, salt, grillede noter og retter, der inviterer til at blive delt.
+          Kósta er skabt til gæster, der vælger restaurant med omhu.
+          For stemningen. For detaljen. For energien i rummet.
         </p>
       </div>
 
@@ -699,37 +648,136 @@
         <div>
           <div class="menu-list">
             <div class="menu-item">
-              <div class="menu-item-label">Aperitivo</div>
-              Oliven & mandler, sprøde flatbreads, spritz og signatur‑cocktails.
+              <div class="menu-item-label">Contemporary Mediterranean</div>
+              Ild · Syre · Tekstur – et køkken, der bygger på åben ild, citrus, olivenolie og sæsonens grønt.
             </div>
             <div class="menu-item">
-              <div class="menu-item-label">Grill</div>
-              Helgrillet fisk, langsomt lam, kulgrillede grøntsager og røgede citruser.
+              <div class="menu-item-label">Centralt i København K</div>
+              Tæt på byens puls, men med plads til at sænke skuldrene og blive hængende.
             </div>
             <div class="menu-item">
-              <div class="menu-item-label">Deleserveringer</div>
-              Crudo, små varme retter og sæsonens salater til midten af bordet.
+              <div class="menu-item-label">Intim stemning</div>
+              Høj kvalitet, personlig service og musik, der matcher aftenen.
             </div>
             <div class="menu-item">
-              <div class="menu-item-label">Vin</div>
-              Europæiske natur- og low‑intervention vine, serveret uformelt og kyndigt.
+              <div class="menu-item-label">Vil du være først?</div>
+              Vil du være blandt de første, der oplever det?
+              Tilmeld dig åbningslisten.
             </div>
           </div>
-          <p class="menu-note">
-            Fuld menu og vinliste offentliggøres tættere på åbningen – skriv dig op for at være blandt de første, der får den.
-          </p>
         </div>
 
         <div class="menu-card">
           <div>
-            <h3>Private Dining</h3>
+            <h3>Join the circle</h3>
             <p>
-              Et skjult lokale i niveauet under restauranten til intime middage, små launch‑events og særlige fejringer. 
-              Curated menu, musik og vin – skræddersyet til jeres selskab.
+              Åbningslisten er til dig, der gerne vil sikre dig de bedste borde, de første aftener og adgang til særlige events.
+              Skriv dig op – og vær foran, når vi åbner dørene.
             </p>
           </div>
-          <div style="margin-top:16px; font-size:11px; text-transform:uppercase; letter-spacing:0.18em;">
-            Forespørgsler: booking@kosta-[by].dk
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FØLG REJSEN -->
+  <section class="section">
+    <div class="wrapper">
+      <div class="section-header">
+        <div>
+          <div class="section-eyebrow">Følg rejsen</div>
+          <h2 class="section-title">Følg transformationen</h2>
+        </div>
+        <p class="section-lead">
+          Vi deler transformationen frem mod åbningen – fra rå lokaler til færdig restaurant.
+          Følg med her:
+        </p>
+      </div>
+
+      <div class="social-grid">
+        <div class="social-copy">
+          <p>
+            Vi deler transformationen frem mod åbningen – fra rå lokaler til færdig restaurant.
+            Følg med her og få et kig bag kulissen.
+          </p>
+          <div class="social-tags">
+            <a href="https://www.instagram.com/kostacph/" class="tag-pill accent">@kostacph</a>
+            <a href="https://www.instagram.com/kostacph/" class="tag-pill accent-link">https://www.instagram.com/kostacph/</a>
+          </div>
+        </div>
+        <div class="insta-grid">
+          <div class="insta-item">
+            <div class="insta-overlay">
+              <span>Rå lokaler</span>
+              <span>Følg for flere</span>
+            </div>
+          </div>
+          <div class="insta-item">
+            <div class="insta-overlay">
+              <span>Menu tests</span>
+              <span>Stories live</span>
+            </div>
+          </div>
+          <div class="insta-item">
+            <div class="insta-overlay">
+              <span>Vin & stemning</span>
+              <span>Behind the scenes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRIVATE DINING -->
+  <section class="section alt">
+    <div class="wrapper">
+      <div class="section-header">
+        <div>
+          <div class="section-eyebrow">Private dining</div>
+          <h2 class="section-title">Et diskret rum under restauranten</h2>
+        </div>
+        <p class="section-lead">
+          Et diskret rum under restauranten.
+          Perfekt til:
+          • Intime middage
+          • Corporate dinners
+          • Launch-events
+          • Særlige fejringer
+          Early access gives til åbningslisten.
+        </p>
+      </div>
+
+      <div class="menu-grid">
+        <div>
+          <div class="menu-list">
+            <div class="menu-item">
+              <div class="menu-item-label">Intime middage</div>
+              Til særlige markeringer og aftener, hvor I gerne vil have lokalet for jer selv.
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-label">Corporate dinners</div>
+              Afslappet, men ambitiøst rum til kunder, kolleger og samarbejdspartnere.
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-label">Launch-events</div>
+              Små lanceringer, tastings og brand‑oplevelser med høj detaljegrad.
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-label">Særlige fejringer</div>
+              Fødselsdage, jubilæer og andre aftener, der fortjener lidt ekstra.
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div>
+            <h3>Early access</h3>
+            <p>
+              Pladserne til private dining er begrænsede de første måneder.
+              Skriv dig på åbningslisten for at få early access til datoer og skræddersyede forløb.
+            </p>
           </div>
         </div>
       </div>
@@ -741,11 +789,11 @@
     <div class="footer-inner">
       <div class="footer-meta">
         <span>Kósta · Contemporary Mediterranean</span>
-        <span>[by], Danmark</span>
+        <span>København K, Danmark</span>
       </div>
       <div class="footer-meta">
         <span>© 2026</span>
-        <span>Instagram · TikTok</span>
+        <span>Instagram</span>
       </div>
     </div>
   </footer>
@@ -753,4 +801,5 @@
 </div>
 </body>
 </html>
+
 
