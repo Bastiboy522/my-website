@@ -17,11 +17,11 @@
       line-height: 1.6;
     }
 
-    /* PALETTE (fra dig) */
+    /* PALETTE */
     :root {
       --body-bg: #F2EDE5;
       --section-alt: #E8DFD2;
-      --heading: #B69A6E;   /* ændret fra #4A3F36 */
+      --heading: #B69A6E;
       --text: #5C4E42;
       --primary: #A88F76;
       --primary-hover: #927B65;
@@ -63,7 +63,7 @@
       gap: 12px;
     }
     .logo-wrap img {
-      height: 40px;           /* justér efter behov */
+      height: 40px;
       width: auto;
     }
     .logo-tagline {
@@ -80,15 +80,15 @@
       border-radius: 999px;
       border: 1px solid var(--border-soft);
       background: rgba(232,223,210,0.8);
-      color: #B69A6E; /* ændret */
+      color: #B69A6E;
     }
 
     /* HERO */
     .hero {
       background: linear-gradient(
         120deg,
-        #B69A6E 0%,   /* ændret */
-        #B69A6E 55%,  /* ændret */
+        #B69A6E 0%,
+        #B69A6E 55%,
         #F2EDE5 55%,
         #F2EDE5 100%
       );
@@ -99,18 +99,11 @@
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
       gap: 48px;
-      102
-
-
-      .hero-image {
-          background-image: url("images/Billede til side.png");
-          background-size: cover;
-          background-position: center;
-        }
+      align-items: stretch;
     }
     @media (max-width: 900px) {
       .hero {
-        background: #B69A6E; /* ændret */
+        background: #B69A6E;
         padding-top: 48px;
       }
       .hero-grid {
@@ -240,7 +233,8 @@
       grid-template-rows: 2.2fr 1.3fr;
     }
     .hero-image {
-      background-image: url("https://images.pexels.com/photos/3298187/pexels-photo-3298187.jpeg?auto=compress&cs=tinysrgb&w=1600");
+      /* her bruger vi billedet i stedet for ren gradient */
+      background-image: url("billede_til_side.png");
       background-size: cover;
       background-position: center;
     }
@@ -249,7 +243,7 @@
       grid-template-columns: 1.15fr 0.85fr;
     }
     .hero-block-primary {
-      background: #B69A6E; /* ændret */
+      background: #B69A6E;
       color: #F2EDE5;
       padding: 22px 24px;
       display: flex;
@@ -282,7 +276,7 @@
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.18em;
-      color: #B69A6E; /* ændret */
+      color: #B69A6E;
     }
 
     /* GENERIC SECTIONS */
@@ -393,7 +387,7 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 6px;
-      background: #B69A6E; /* ændret */
+      background: #B69A6E;
       border-radius: 18px;
       overflow: hidden;
     }
@@ -426,7 +420,7 @@
       letter-spacing: 0.18em;
     }
 
-    /* MENU MOOD */
+    /* MENU MOOD / PRIVATE DINING */
     .menu-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
@@ -466,7 +460,7 @@
 
     .menu-card {
       border-radius: 18px;
-      background: linear-gradient(145deg, #B69A6E, #A88F76); /* ændret */
+      background: linear-gradient(145deg, #B69A6E, #A88F76);
       color: #F2EDE5;
       padding: 22px 20px 18px;
       display: flex;
@@ -497,7 +491,7 @@
       padding: 30px 24px 36px;
       background: var(--footer);
       font-size: 12px;
-      color: #B69A6E; /* ændret */
+      color: #B69A6E;
     }
     .footer-inner {
       max-width: 1120px;
@@ -526,9 +520,7 @@
   <header class="topbar">
     <div class="wrapper topbar-inner">
       <div class="logo-wrap">
-        <!-- Erstat src med den rigtige filsti/filnavn til dit logo -->
-        530
-        src="kosta-logo.pn.pngg" alt="Kósta – Contemporary Mediterranean">
+        <img src="kosta-logo.png" alt="Kósta – Contemporary Mediterranean">
         <span class="logo-tagline">CONTEMPORARY MEDITERRANEAN</span>
       </div>
       <div class="top-pill">Opening Summer 2026 · Copenhagen K</div>
@@ -809,5 +801,4 @@ Tilmeld dig og modtag:
 </div>
 </body>
 </html>
-
 
