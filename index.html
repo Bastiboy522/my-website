@@ -7,56 +7,43 @@
   <meta name="description" content="Kósta er en contemporary Mediterranean restaurant i København, hvor skandinavisk minimalisme møder det sydlige Europa. Åbner snart – skriv dig op til vores pre-opening.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Kan skiftes til dine egne brand-fonts -->
+  <!-- Skift evt. til dine egne brand-fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Mere stenet, dæmpet palette */
-      --color-bg: #f3efe8;            /* warm neutral */
+      /* Kósta-palette: varme neutrale, muted olive, soft stone */
+      --color-bg: #f3efe8;
       --color-bg-soft: #f7f3ec;
       --color-text: #26211d;
       --color-muted: #7b736a;
-      --color-accent: #9ca58a;        /* muted olive */
+      --color-accent: #9ca58a;
       --color-accent-soft: #c0c7ae;
-      --color-stone: #d1c9bc;         /* soft stone */
-      --color-border: rgba(70, 63, 54, 0.14);
+      --color-stone: #d1c9bc;
+      --color-border: rgba(70,63,54,0.14);
 
       --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --font-serif: "Playfair Display", "Times New Roman", serif;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: var(--font-sans);
-      background-color: var(--color-bg);
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.9), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(196,188,176,0.5), transparent 60%),
+        var(--color-bg);
       color: var(--color-text);
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .page {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.9), transparent 55%),
-        radial-gradient(circle at bottom right, rgba(196,188,176,0.55), transparent 60%),
-        var(--color-bg);
     }
 
     .shell {
@@ -65,91 +52,77 @@
       padding: 32px 20px 40px;
     }
 
-    header {
+    /* SIMPLE TOP NAV (inspireret af Cafe & Øl-halle men ultra-minimal) */
+
+    .top-bar {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 56px;
+      justify-content: flex-end;
+      gap: 18px;
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 24px;
     }
 
-    .logo-mark {
+    .top-link {
+      border-radius: 999px;
+      padding: 6px 10px;
+      border: 1px solid transparent;
+    }
+
+    .top-link--primary {
+      border-color: rgba(123,115,106,0.25);
+      background: rgba(247,243,236,0.9);
+    }
+
+    /* CENTERED HERO ala Café & Øl-halle, men mere editorial */
+
+    .hero {
+      text-align: center;
+      padding: 40px 0 56px;
+    }
+
+    .hero-logo-mark {
       display: inline-flex;
+      flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: 6px;
+      margin-bottom: 24px;
     }
 
-    .logo-icon {
-      width: 32px;
-      height: 32px;
+    .hero-logo-icon {
+      width: 40px;
+      height: 40px;
       border-radius: 999px;
       background: radial-gradient(circle at 20% 0%, #f7f3ec 0%, #b5ad9f 40%, #8e8476 100%);
       position: relative;
       overflow: hidden;
+      margin-bottom: 4px;
     }
 
-    .logo-icon::before {
+    .hero-logo-icon::before {
       content: "";
       position: absolute;
-      inset: 7px 9px;
+      inset: 8px 10px;
       border-radius: 999px;
       border: 1px solid rgba(243,239,232,0.9);
       border-top: none;
       border-bottom: none;
     }
 
-    .logo-text-main {
+    .hero-logo-name {
       font-family: var(--font-serif);
-      font-size: 18px;
-      letter-spacing: 0.18em;
+      font-size: 20px;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
     }
 
-    .logo-text-sub {
+    .hero-logo-sub {
       font-size: 11px;
       letter-spacing: 0.32em;
       text-transform: uppercase;
       color: var(--color-muted);
-    }
-
-    .header-tagline {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.24em;
-      color: var(--color-muted);
-      border-radius: 999px;
-      border: 1px solid rgba(123,115,106,0.2);
-      padding: 6px 14px;
-      backdrop-filter: blur(10px);
-      background: rgba(243,239,232,0.7);
-      white-space: nowrap;
-    }
-
-    @media (max-width: 640px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .header-tagline {
-        align-self: flex-start;
-      }
-    }
-
-    /* HERO */
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.1fr);
-      gap: 52px;
-      align-items: center;
-      margin-bottom: 72px;
-    }
-
-    @media (max-width: 880px) {
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
     }
 
     .hero-kicker {
@@ -157,16 +130,15 @@
       letter-spacing: 0.26em;
       text-transform: uppercase;
       color: var(--color-muted);
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     .hero-title {
       font-family: var(--font-serif);
       font-size: clamp(30px, 3.4vw, 38px);
-      line-height: 1.15;
-      letter-spacing: 0.02em;
-      margin-bottom: 16px;
-      max-width: 18ch;
+      line-height: 1.2;
+      max-width: 26ch;
+      margin: 0 auto 14px;
     }
 
     .hero-title span.soft {
@@ -175,21 +147,22 @@
     }
 
     .hero-subline {
-      max-width: 440px;
+      max-width: 520px;
+      margin: 0 auto 28px;
       font-size: 15px;
       color: var(--color-muted);
-      margin-bottom: 24px;
     }
 
-    .hero-meta {
+    .hero-meta-row {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
-      gap: 14px;
+      gap: 12px;
+      margin-bottom: 34px;
       font-size: 11px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--color-muted);
-      margin-bottom: 26px;
     }
 
     .meta-pill {
@@ -199,35 +172,56 @@
       background: rgba(247,243,236,0.96);
     }
 
-    /* SIGNUP CARD */
+    /* HERO CARDS – signup + visual side om side, som Cafe & Øl-halle teaserbokse */
 
-    .signup-card {
-      border-radius: 18px;
-      padding: 18px 22px 20px;
-      background: rgba(247,243,236,0.95);
-      border: 1px solid var(--color-border);
-      box-shadow:
-        0 14px 34px rgba(32, 27, 21, 0.08),
-        inset 0 0 0 0.5px rgba(255,255,255,0.7);
-      backdrop-filter: blur(14px);
-      max-width: 430px;
+    .hero-cards {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 24px;
+      max-width: 760px;
+      margin: 0 auto;
+      align-items: stretch;
     }
 
-    .signup-title {
+    @media (max-width: 880px) {
+      .hero-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      border-radius: 18px;
+      border: 1px solid var(--color-border);
+      background: rgba(247,243,236,0.96);
+      padding: 20px 22px 18px;
+      text-align: left;
+      box-shadow:
+        0 16px 34px rgba(32,27,21,0.08),
+        inset 0 0 0 0.5px rgba(255,255,255,0.7);
+      backdrop-filter: blur(14px);
+    }
+
+    .card-kicker {
       font-size: 11px;
       letter-spacing: 0.24em;
       text-transform: uppercase;
-      margin-bottom: 7px;
       color: var(--color-muted);
+      margin-bottom: 8px;
     }
 
-    .signup-body {
+    .card-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .card-body {
       font-size: 14px;
       color: var(--color-text);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
-    .signup-incentive {
+    .card-note {
       font-size: 13px;
       color: var(--color-muted);
       margin-bottom: 16px;
@@ -237,10 +231,11 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      margin-bottom: 10px;
     }
 
     .signup-form input[type="email"] {
-      flex: 1 1 180px;
+      flex: 1 1 200px;
       min-width: 0;
       border-radius: 999px;
       border: 1px solid rgba(123,115,106,0.4);
@@ -267,17 +262,16 @@
       cursor: pointer;
       white-space: nowrap;
       transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, filter 0.12s ease-out;
-      box-shadow: 0 10px 22px rgba(73, 82, 63, 0.3);
+      box-shadow: 0 10px 22px rgba(73,82,63,0.3);
     }
 
     .signup-form button:hover {
       transform: translateY(-1px);
-      box-shadow: 0 14px 28px rgba(73, 82, 63, 0.38);
+      box-shadow: 0 14px 28px rgba(73,82,63,0.38);
       filter: saturate(1.05);
     }
 
     .signup-meta {
-      margin-top: 10px;
       font-size: 11px;
       color: var(--color-muted);
     }
@@ -287,102 +281,78 @@
       letter-spacing: 0.18em;
     }
 
-    /* HERO VISUAL */
+    /* Visual-card (inspireret af deres store hero-billede med overlagt tekst) */
 
-    .hero-visual {
+    .visual-card {
       position: relative;
-      margin-top: 10px;
-    }
-
-    .hero-card {
-      position: relative;
-      border-radius: 22px;
+      border-radius: 18px;
       overflow: hidden;
-      min-height: 260px;
-      padding: 22px 22px 20px;
-      color: #f7f3ec;
       background:
-        linear-gradient(145deg, #b19d84 0%, #9c8a75 38%, #7f6d5a 100%);
+        linear-gradient(145deg, #b19d84 0%, #9c8a75 40%, #7f6d5a 100%);
+      color: #f7f3ec;
+      padding: 20px 20px 18px;
       box-shadow:
-        0 30px 70px rgba(32, 27, 21, 0.6),
+        0 26px 60px rgba(32,27,21,0.6),
         0 0 0 1px rgba(248,242,234,0.55) inset;
     }
 
-    .hero-card::before {
+    .visual-card::before {
       content: "";
       position: absolute;
       inset: 0;
       background:
         radial-gradient(circle at top, rgba(243,239,232,0.2), transparent 60%),
-        linear-gradient(to top, rgba(19, 13, 7, 0.55), transparent 50%);
+        linear-gradient(to top, rgba(19,13,7,0.55), transparent 50%);
       mix-blend-mode: soft-light;
     }
 
-    .hero-card-inner {
+    .visual-inner {
       position: relative;
       z-index: 1;
-      max-width: 260px;
     }
 
-    .hero-card-kicker {
+    .visual-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
       font-size: 10px;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      opacity: 0.9;
-      margin-bottom: 6px;
     }
 
-    .hero-card-title {
+    .visual-title {
       font-family: var(--font-serif);
       font-size: 17px;
       line-height: 1.3;
-      margin-bottom: 7px;
+      margin-bottom: 6px;
     }
 
-    .hero-card-copy {
+    .visual-copy {
       font-size: 12px;
-      opacity: 0.9;
-    }
-
-    .hero-card-tag {
-      margin-top: 12px;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
       opacity: 0.95;
     }
 
-    .hero-card-badge {
-      position: absolute;
-      top: 14px;
-      right: 18px;
-      padding: 9px 13px;
-      border-radius: 999px;
-      border: 1px solid rgba(239,232,222,0.8);
-      background: rgba(16, 11, 7, 0.16);
-      backdrop-filter: blur(10px);
-      color: #f7f3ec;
+    .visual-tag {
+      margin-top: 12px;
       font-size: 10px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
+      opacity: 0.95;
     }
 
-    .hero-card-badge span {
-      opacity: 0.8;
-    }
-
-    /* SECTIONS */
+    /* CONTENT-SEKTION ala “Historien / Selskaber”-layout: tekst + kort-boks */
 
     .section {
-      margin-bottom: 68px;
+      padding: 10px 0 60px;
+      border-top: 1px solid rgba(104,96,86,0.18);
+      margin-top: 40px;
     }
 
     .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 16px;
-      margin-bottom: 26px;
+      text-align: center;
+      margin-bottom: 32px;
     }
 
     .section-kicker {
@@ -390,143 +360,127 @@
       letter-spacing: 0.23em;
       text-transform: uppercase;
       color: var(--color-muted);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .section-title {
       font-family: var(--font-serif);
       font-size: 22px;
       letter-spacing: 0.04em;
-      max-width: 26ch;
+      margin-bottom: 6px;
     }
 
     .section-intro {
-      max-width: 360px;
+      max-width: 520px;
+      margin: 0 auto;
       font-size: 14px;
       color: var(--color-muted);
     }
 
-    @media (max-width: 720px) {
-      .section-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    .story-grid {
+    .section-grid {
       display: grid;
-      gap: 32px;
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 28px;
+      align-items: flex-start;
+      max-width: 840px;
+      margin: 0 auto;
     }
 
     @media (max-width: 880px) {
-      .story-grid {
+      .section-grid {
         grid-template-columns: 1fr;
       }
     }
 
-    .story-text p {
+    .section-text p {
       font-size: 14px;
-      max-width: 520px;
+      margin-bottom: 12px;
+      color: var(--color-text);
     }
 
-    .story-text p + p {
-      margin-top: 12px;
-    }
-
-    .story-tags {
-      margin-top: 14px;
-      font-size: 10px;
+    .section-tags {
+      font-size: 11px;
       letter-spacing: 0.24em;
       text-transform: uppercase;
       color: var(--color-muted);
+      margin-top: 6px;
     }
 
-    .story-box {
-      border-radius: 18px;
+    .info-card {
+      border-radius: 16px;
       border: 1px solid var(--color-border);
       background: rgba(247,243,236,0.96);
-      padding: 18px 18px 15px;
+      padding: 16px 18px 14px;
       font-size: 13px;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px 18px;
+      gap: 10px;
     }
 
-    @media (max-width: 520px) {
-      .story-box {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .story-item-label {
+    .info-label {
       font-size: 10px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--color-muted);
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
 
-    .story-item-value {
+    .info-value {
       font-size: 14px;
     }
 
-    .story-item-note {
-      margin-top: 4px;
+    .info-note {
       font-size: 12px;
       color: var(--color-muted);
+      margin-top: 2px;
     }
 
-    /* SOCIAL SECTION */
+    /* SOCIAL PROOF – simple, inspireret af deres testimonials + social ikoner */
 
-    .social-grid {
-      border-radius: 18px;
-      border: 1px solid rgba(104, 96, 86, 0.18);
-      background: linear-gradient(135deg, rgba(247,243,236,0.96), rgba(221,213,201,0.93));
-      padding: 20px 20px 18px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.3fr);
-      gap: 22px;
-      align-items: center;
+    .social-section {
+      padding: 10px 0 56px;
+      border-top: 1px solid rgba(104,96,86,0.18);
     }
 
-    @media (max-width: 800px) {
-      .social-grid {
-        grid-template-columns: 1fr;
-      }
+    .social-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
     }
 
     .social-heading {
       font-size: 11px;
-      letter-spacing: 0.24em;
+      letter-spacing: 0.23em;
       text-transform: uppercase;
-      color: rgba(78, 70, 62, 0.9);
-      margin-bottom: 6px;
+      color: var(--color-muted);
+      margin-bottom: 8px;
     }
 
     .social-title {
       font-family: var(--font-serif);
-      font-size: 18px;
-      margin-bottom: 8px;
+      font-size: 20px;
+      margin-bottom: 10px;
     }
 
     .social-copy {
       font-size: 14px;
-      color: rgba(62, 54, 45, 0.96);
+      color: var(--color-muted);
+      max-width: 520px;
+      margin: 0 auto 18px;
     }
 
     .social-handles {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 14px;
+      gap: 10px;
+      margin-bottom: 10px;
       font-size: 13px;
     }
 
     .social-pill {
       padding: 7px 11px;
       border-radius: 999px;
-      border: 1px solid rgba(72, 64, 55, 0.28);
+      border: 1px solid rgba(72,64,55,0.28);
       background: rgba(247,243,236,0.92);
       display: flex;
       align-items: center;
@@ -541,70 +495,22 @@
     }
 
     .social-meta {
-      margin-top: 8px;
       font-size: 10px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: rgba(78, 70, 62, 0.85);
+      color: rgba(78,70,62,0.85);
     }
 
-    .social-mosaic {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 6px;
-      height: 150px;
+    /* PRAKTISK INFO + FOOTER a la Cafe & Øl-halle, men mere minimal */
+
+    .practical {
+      padding: 18px 0 30px;
+      border-top: 1px solid rgba(104,96,86,0.18);
     }
 
-    .social-tile {
-      border-radius: 10px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .social-tile::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(19,12,7,0.55), transparent 60%);
-      opacity: 0.9;
-    }
-
-    .social-tile:nth-child(1) {
-      background-image: linear-gradient(145deg, #a69179, #c1a888);
-    }
-
-    .social-tile:nth-child(2) {
-      background-image: linear-gradient(135deg, #736656, #96816c);
-    }
-
-    .social-tile:nth-child(3) {
-      background-image: linear-gradient(135deg, #b59b82, #d1b697);
-    }
-
-    .social-tile-inner {
-      position: absolute;
-      inset: 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      color: #f7f3ec;
-      font-size: 10px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      opacity: 0.96;
-    }
-
-    .social-tile-caption {
-      font-size: 9px;
-      letter-spacing: 0.18em;
-    }
-
-    /* INFO / FOOTER */
-
-    .info-row {
+    .practical-row {
+      max-width: 760px;
+      margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
       gap: 16px;
@@ -612,7 +518,7 @@
       color: var(--color-muted);
     }
 
-    .info-chip {
+    .chip {
       padding: 7px 13px;
       border-radius: 999px;
       border: 1px dashed rgba(123,115,106,0.45);
@@ -620,9 +526,8 @@
     }
 
     footer {
-      margin-top: auto;
       border-top: 1px solid rgba(104,96,86,0.18);
-      padding: 18px 20px 10px;
+      padding: 16px 20px 10px;
       font-size: 11px;
       color: var(--color-muted);
     }
@@ -658,221 +563,166 @@
   <div class="page">
     <div class="shell">
 
-      <header>
-        <div class="logo-mark">
-          <div class="logo-icon" aria-hidden="true"></div>
-          <div>
-            <div class="logo-text-main">Kósta</div>
-            <div class="logo-text-sub">Contemporary Mediterranean</div>
-          </div>
+      <div class="top-bar">
+        <a href="#signup" class="top-link top-link--primary">Pre-opening</a>
+        <a href="#kontakt" class="top-link">Kontakt</a>
+      </div>
+
+      <header class="hero">
+        <div class="hero-logo-mark">
+          <div class="hero-logo-icon" aria-hidden="true"></div>
+          <div class="hero-logo-name">Kósta</div>
+          <div class="hero-logo-sub">Contemporary Mediterranean</div>
         </div>
-        <div class="header-tagline">
-          Scandinavian minimalism · Southern heat
+
+        <div class="hero-kicker">Åbner snart i København</div>
+
+        <h1 class="hero-title">
+          Mediterranean evenings,<br>
+          <span class="soft">curated for Copenhagen nights.</span>
+        </h1>
+
+        <p class="hero-subline">
+          Kósta er et intimt rum, hvor levende flammer, delte retter og naturlige materialer mødes. Skabt til par, vennegrupper og middage, der fortjener lidt mere end “bare ude at spise”.
+        </p>
+
+        <div class="hero-meta-row">
+          <div class="meta-pill">Vin · Småretter · Grill</div>
+          <div class="meta-pill">Christianshavn, København</div>
+          <div class="meta-pill">Aftenservice &amp; late bar</div>
         </div>
-      </header>
 
-      <main>
-        <!-- HERO -->
-        <section class="hero">
-          <div>
-            <div class="hero-kicker">
-              Åbner snart i København
+        <div class="hero-cards">
+          <div class="card" id="signup">
+            <div class="card-kicker">Pre-opening hos Kósta</div>
+            <div class="card-title">Vær blandt de første ved bordet</div>
+            <div class="card-body">
+              Skriv dig på listen og få første adgang til vores pre-opening aftener med kurateret menu og vinparringer.
             </div>
-            <h1 class="hero-title">
-              Mediterranean evenings,<br>
-              <span class="soft">curated for Copenhagen nights.</span>
-            </h1>
-            <p class="hero-subline">
-              Kósta er et intimt rum, hvor levende flammer, delte retter og naturlige materialer mødes. Skabt til par, vennegrupper og middage, der fortjener lidt mere end “bare ude at spise”.
-            </p>
-
-            <div class="hero-meta">
-              <div class="meta-pill">Vin · Småretter · Grill</div>
-              <div class="meta-pill">Christianshavn, København</div>
-              <div class="meta-pill">Aftenservice &amp; late bar</div>
+            <div class="card-note">
+              De første 100 på listen får et glas mousserende ved første besøg.
             </div>
 
-            <div class="signup-card" id="signup">
-              <div class="signup-title">Pre-opening hos Kósta</div>
-              <div class="signup-body">
-                Skriv dig på listen og få første adgang til vores pre-opening aftener med kurateret menu og vinparringer.
-              </div>
-              <div class="signup-incentive">
-                De første 100 på listen får et glas mousserende ved første besøg.
-              </div>
-
-              <form class="signup-form">
-                <input type="email" name="email" placeholder="Din e-mailadresse" required>
-                <button type="submit">Vær med fra start</button>
-              </form>
-              <div class="signup-meta">
-                <span>Ingen spam</span> · Kun få, velkuraterede updates om åbning, menu og events.
-              </div>
+            <form class="signup-form">
+              <input type="email" name="email" placeholder="Din e-mailadresse" required>
+              <button type="submit">Vær med fra start</button>
+            </form>
+            <div class="signup-meta">
+              <span>Ingen spam</span> · Kun få, velkuraterede updates om åbning, menu og events.
             </div>
           </div>
 
-          <aside class="hero-visual" aria-hidden="true">
-            <div class="hero-card">
-              <div class="hero-card-inner">
-                <div class="hero-card-kicker">Visualisering</div>
-                <div class="hero-card-title">
-                  Warm light, soft stone, long tables.
-                </div>
-                <div class="hero-card-copy">
-                  Tænk lyse træpaneler, oliventræ, hørtekstiler og dæmpede, varme toner – som et privat dining room ved Middelhavet, tegnet af en københavnsk arkitekt.
-                </div>
-                <div class="hero-card-tag">
-                  Soho House–adjacent · Not taverna
-                </div>
+          <aside class="visual-card" aria-hidden="true">
+            <div class="visual-inner">
+              <div class="visual-top">
+                <span>Visualisering</span>
+                <span>Åbner SS26 · København</span>
               </div>
-              <div class="hero-card-badge">
-                Åbner SS26 · <span>København</span>
+              <div class="visual-title">
+                Warm light, soft stone, long tables.
+              </div>
+              <div class="visual-copy">
+                Tænk lyse træpaneler, oliventræ, hørtekstiler og dæmpede, varme toner – som et privat dining room ved Middelhavet, tegnet af en københavnsk arkitekt.
+              </div>
+              <div class="visual-tag">
+                Soho House–adjacent · Not taverna
               </div>
             </div>
           </aside>
-        </section>
+        </div>
+      </header>
 
-        <!-- STORY -->
-        <section class="section">
-          <div class="section-header">
-            <div>
-              <div class="section-kicker">01 · Køkken &amp; oplevelse</div>
-              <h2 class="section-title">Contemporary Mediterranean, filtreret gennem nordisk ro</h2>
-            </div>
-            <p class="section-intro">
-              Menuen er inspireret af kyststrækningerne fra Barcelona til Beirut, serveret i et miljø, der kunne være lige så meget designstudio som dining room.
+      <section class="section">
+        <div class="section-header">
+          <div class="section-kicker">Køkken &amp; oplevelse</div>
+          <h2 class="section-title">Contemporary Mediterranean, filtreret gennem nordisk ro</h2>
+          <p class="section-intro">
+            Menuen er inspireret af kyststrækningerne fra Barcelona til Beirut, serveret i et miljø, der kunne være lige så meget designstudio som dining room.
+          </p>
+        </div>
+
+        <div class="section-grid">
+          <div class="section-text">
+            <p>
+              Forvent grøntsager over åben ild, delte serveringer og rige saucer balanceret af citrussyre, friske urter og gode olier. Vi arbejder med lavmælt luksus: få, velvalgte råvarer, tilberedt med teknisk præcision og uformel generøsitet.
             </p>
-          </div>
-
-          <div class="story-grid">
-            <div class="story-text">
-              <p>
-                Forvent grøntsager over åben ild, delte serveringer og rige saucer balanceret af citrussyre, friske urter og gode olier. Vi arbejder med lavmælt luksus: få, velvalgte råvarer, tilberedt med teknisk præcision og uformel generøsitet.
-              </p>
-              <p>
-                Stemningen er bevidst intim: dæmpet belysning, tekstureret stuk og lyse træsorter, bløde polstringer og keramiske detaljer, der føles mere studio end restaurant. En ramme, hvor det er lige så naturligt at fejre en sign-on bonus som en tirsdag med venner.
-              </p>
-              <div class="story-tags">
-                Designbevidste gæster · 28–45 · Par, venner, corporate
-              </div>
-            </div>
-
-            <div class="story-box">
-              <div>
-                <div class="story-item-label">Køkken</div>
-                <div class="story-item-value">
-                  Delte retter, grill &amp; grønt med referencer fra Spanien, Italien, Grækenland og Levanten.
-                </div>
-              </div>
-              <div>
-                <div class="story-item-label">Stemning</div>
-                <div class="story-item-value">
-                  Elegant, varm og afslappet – som at være gæst i et godt kurateret hjem ved vandet.
-                </div>
-              </div>
-              <div>
-                <div class="story-item-label">Anledninger</div>
-                <div class="story-item-value">
-                  Date nights, venne middage, mindre firmaarrangementer og semi-private celebration dinners.
-                </div>
-                <div class="story-item-note">
-                  Skriv i notefeltet ved signup, hvis du vil kontaktes om private dining.
-                </div>
-              </div>
-              <div>
-                <div class="story-item-label">Bar</div>
-                <div class="story-item-value">
-                  Mediterranean-inspired cocktails, low intervention-vine og udvalgte spiritus med fokus på friskhed og bitterhed.
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- SOCIAL -->
-        <section class="section">
-          <div class="section-header">
-            <div>
-              <div class="section-kicker">02 · Følg med</div>
-              <h2 class="section-title">Fra tomt lokale til levende rum hos Kósta</h2>
-            </div>
-            <p class="section-intro">
-              Vi deler rejsen fra nøgleoverdragelse til første service – materialer, moodboards, menu-tests og små øjeblikke fra køkkenet.
+            <p>
+              Stemningen er bevidst intim: dæmpet belysning, tekstureret stuk og lyse træsorter, bløde polstringer og keramiske detaljer, der føles mere studio end restaurant. En ramme, hvor det er lige så naturligt at fejre en sign-on bonus som en tirsdag med venner.
             </p>
+            <div class="section-tags">
+              Designbevidste gæster · 28–45 · Par, venner, corporate
+            </div>
           </div>
 
-          <div class="social-grid">
+          <div class="info-card">
             <div>
-              <div class="social-heading">Social proof</div>
-              <div class="social-title">Se Kósta tage form, én detalje ad gangen</div>
-              <p class="social-copy">
-                Fra første skitse til sidste lysdæmpning dokumenterer vi processen. Følg med, gem favoritter og vær blandt de første, der mærker stemningen – både online og ved åbning.
-              </p>
-
-              <div class="social-handles">
-                <a href="#" class="social-pill">
-                  <span class="icon"></span>
-                  <span>@kosta.cph</span>
-                </a>
-                <a href="#" class="social-pill">
-                  <span class="icon"></span>
-                  <span>#kostacph</span>
-                </a>
-              </div>
-              <div class="social-meta">
-                Følg med i transformationen · interiors · menu tests · behind the pass
+              <div class="info-label">Køkken</div>
+              <div class="info-value">
+                Delte retter, grill &amp; grønt med referencer fra Spanien, Italien, Grækenland og Levanten.
               </div>
             </div>
-
             <div>
-              <div class="social-mosaic" aria-hidden="true">
-                <div class="social-tile">
-                  <div class="social-tile-inner">
-                    <div>Raw space → first sketches</div>
-                    <div class="social-tile-caption">Q1 · byggeplads &amp; moodboards</div>
-                  </div>
-                </div>
-                <div class="social-tile">
-                  <div class="social-tile-inner">
-                    <div>Materials &amp; textures</div>
-                    <div class="social-tile-caption">Sten, træ, hør &amp; lys</div>
-                  </div>
-                </div>
-                <div class="social-tile">
-                  <div class="social-tile-inner">
-                    <div>First service rehearsals</div>
-                    <div class="social-tile-caption">Friends &amp; family nights</div>
-                  </div>
-                </div>
+              <div class="info-label">Stemning</div>
+              <div class="info-value">
+                Elegant, varm og afslappet – som at være gæst i et godt kurateret hjem ved vandet.
               </div>
-              <div class="info-row" style="margin-top: 12px;">
-                <div class="info-chip">
-                  Interiør: skandinavisk ro, middelhavets varme – ingen blå checkduge.
-                </div>
-                <div class="info-chip">
-                  Sound: low-key, groove-orienteret, aftenvenlig – ikke lounge compilations.
-                </div>
+            </div>
+            <div>
+              <div class="info-label">Anledninger</div>
+              <div class="info-value">
+                Date nights, venne middage, mindre firmaarrangementer og semi-private celebration dinners.
+              </div>
+              <div class="info-note">
+                Skriv i notefeltet ved signup, hvis du vil kontaktes om private dining.
+              </div>
+            </div>
+            <div>
+              <div class="info-label">Bar</div>
+              <div class="info-value">
+                Mediterranean-inspired cocktails, low intervention-vine og udvalgte spiritus med fokus på friskhed og bitterhed.
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- INFO -->
-        <section class="section" aria-label="Praktisk info">
-          <div class="info-row">
-            <div class="info-chip">
-              Adresse: [Adresse], København · Tæt på vandet, metro og byen.
-            </div>
-            <div class="info-chip">
-              Forventet åbning: Forår/Sommer 2026 – eksakt dato deles med mailinglisten først.
-            </div>
-            <div class="info-chip">
-              Booking: Online booking åbner for mailinglisten ca. 2 uger før offentligheden.
-            </div>
+      <section class="social-section">
+        <div class="social-inner">
+          <div class="social-heading">Følg med</div>
+          <div class="social-title">Se Kósta tage form, én detalje ad gangen</div>
+          <p class="social-copy">
+            Vi deler rejsen fra nøgleoverdragelse til første service – materialer, moodboards, menu-tests og små øjeblikke fra køkkenet.
+          </p>
+
+          <div class="social-handles">
+            <a href="#" class="social-pill">
+              <span class="icon"></span>
+              <span>@kosta.cph</span>
+            </a>
+            <a href="#" class="social-pill">
+              <span class="icon"></span>
+              <span>#kostacph</span>
+            </a>
           </div>
-        </section>
-      </main>
+          <div class="social-meta">
+            Følg med i transformationen · interiors · menu tests · behind the pass
+          </div>
+        </div>
+      </section>
 
+      <section class="practical" id="kontakt">
+        <div class="practical-row">
+          <div class="chip">
+            Adresse: [Adresse], København · Tæt på vandet, metro og byen.
+          </div>
+          <div class="chip">
+            Forventet åbning: Forår/Sommer 2026 – eksakt dato deles med mailinglisten først.
+          </div>
+          <div class="chip">
+            Booking: Online booking åbner for mailinglisten ca. 2 uger før offentligheden.
+          </div>
+        </div>
+      </section>
     </div>
 
     <footer>
